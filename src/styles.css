@@ -105,24 +105,27 @@
 }
 
 @utility gradient-brand {
-  background-image: var(--gradient-brand);
+  background-color: var(--brand-navy);
+  color: #fff;
 }
 @utility gradient-brand-rev {
-  background-image: var(--gradient-brand-rev);
+  background-color: var(--brand-blue);
+  color: #fff;
 }
 @utility text-gradient {
-  background-image: var(--gradient-brand);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--brand-indigo);
 }
+.dark .text-gradient { color: var(--brand-blue); }
 @utility glass {
-  background: color-mix(in oklab, var(--card) 60%, transparent);
+  background: color-mix(in oklab, var(--card) 70%, transparent);
   backdrop-filter: blur(16px) saturate(160%);
   border: 1px solid color-mix(in oklab, var(--border) 80%, transparent);
 }
 @utility shadow-brand {
   box-shadow: var(--shadow-brand);
+}
+@utility shadow-soft {
+  box-shadow: var(--shadow-soft);
 }
 @utility shadow-glow {
   box-shadow: var(--shadow-glow);
