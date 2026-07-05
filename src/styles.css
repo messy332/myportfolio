@@ -66,12 +66,9 @@
   --input: oklch(0.9 0.01 255);
   --ring: var(--brand-blue);
 
-  --gradient-brand: linear-gradient(135deg, #0A2947 0%, #293681 55%, #4382DF 100%);
-  --gradient-brand-rev: linear-gradient(90deg, #4382DF 0%, #293681 50%, #0A2947 100%);
-  --gradient-glow: radial-gradient(circle at 30% 20%, rgba(67,130,223,0.35), transparent 60%),
-                   radial-gradient(circle at 80% 70%, rgba(41,54,129,0.3), transparent 60%);
-  --shadow-brand: 0 20px 40px -20px rgba(10,41,71,0.35);
-  --shadow-glow: 0 0 40px -10px rgba(67,130,223,0.55);
+  --shadow-brand: 0 20px 40px -20px rgba(10,41,71,0.18);
+  --shadow-soft: 0 8px 24px -12px rgba(10,41,71,0.15);
+  --shadow-glow: 0 10px 30px -12px rgba(67,130,223,0.35);
 }
 
 .dark {
