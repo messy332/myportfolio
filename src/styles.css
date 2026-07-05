@@ -89,9 +89,7 @@
   --border: oklch(1 0 0 / 12%);
   --input: oklch(1 0 0 / 15%);
   --ring: var(--brand-blue);
-  --gradient-glow: radial-gradient(circle at 30% 20%, rgba(67,130,223,0.25), transparent 60%),
-                   radial-gradient(circle at 80% 70%, rgba(41,54,129,0.35), transparent 60%);
-  --shadow-brand: 0 20px 40px -20px rgba(0,0,0,0.6);
+  --shadow-brand: 0 20px 40px -20px rgba(0,0,0,0.5);
 }
 
 @layer base {
