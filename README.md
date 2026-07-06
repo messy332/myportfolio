@@ -1,22 +1,56 @@
-# Routes
+# My Portfolio
 
-TanStack Start uses **file-based routing**. Every `.tsx` file in this directory
-defines a route. Do **not** create `src/pages/`, `src/routes/_app/index.tsx`, or
-`app/layout.tsx` — those are Next.js / Remix conventions. The only root layout
-is `src/routes/__root.tsx`.
+Personal portfolio built with TanStack Start, React, TypeScript, and Vite.
 
-## Conventions
+## Overview
 
-| File | URL |
-| --- | --- |
-| `index.tsx` | `/` |
-| `about.tsx` | `/about` |
-| `users/index.tsx` | `/users` |
-| `users/$id.tsx` | `/users/:id` (dynamic — bare `$`, no curly braces) |
-| `posts/{-$category}.tsx` | `/posts/:category?` (optional segment) |
-| `files/$.tsx` | `/files/*` (splat — read via `_splat` param, never `*`) |
-| `_layout.tsx` | layout route (renders children via `<Outlet />`) |
-| `__root.tsx` | app shell — wraps every page; preserve `<Outlet />` |
+This project presents a single-page portfolio with sections for the hero, experience, projects, skills, contact, and footer. It uses file-based routing through TanStack Start and a shared UI component set under `src/components`.
 
-## NOTE:
-`routeTree.gen.ts` is auto-generated. Don't edit it by hand.
+## Tech Stack
+
+- TanStack Start
+- TanStack Router
+- React 19
+- TypeScript
+- Vite
+- Tailwind CSS v4
+
+## Getting Started
+
+Install dependencies and start the dev server:
+
+```bash
+npm install
+npm run dev
+```
+
+## Available Scripts
+
+- `npm run dev` starts the development server.
+- `npm run build` creates a production build.
+- `npm run build:dev` builds the app in development mode.
+- `npm run preview` previews the production build locally.
+- `npm run lint` runs ESLint across the project.
+- `npm run format` formats the codebase with Prettier.
+
+## Project Structure
+
+- `src/routes/` contains the TanStack Start routes.
+- `src/components/portfolio/` contains the portfolio sections and page-level components.
+- `src/components/ui/` contains reusable UI primitives.
+- `src/lib/` contains shared utilities and error handling.
+- `public/` contains static assets.
+
+## Routing Notes
+
+TanStack Start uses file-based routing. Every `.tsx` file inside `src/routes/` defines a route.
+
+- `src/routes/index.tsx` is the home page.
+- `src/routes/__root.tsx` is the app shell and must preserve `<Outlet />`.
+- `src/routeTree.gen.ts` is auto-generated and should not be edited manually.
+
+## Editing Notes
+
+- Keep route files inside `src/routes/`.
+- Use shared components from `src/components/portfolio/` for page sections.
+- Update metadata in route files when changing page titles or descriptions.
