@@ -13,7 +13,7 @@ export function Hero() {
           aria-hidden
           className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center select-none"
         >
-          <span className="font-display font-black leading-[0.85] tracking-tighter text-foreground/[0.07] text-[22vw] md:text-[16vw] lg:text-[14rem] whitespace-nowrap">
+          <span className="font-display font-black leading-[0.85] tracking-tighter text-foreground/1500 text-[22vw] md:text-[16vw] lg:text-[14rem] whitespace-nowrap">
             PARMINDER
           </span>
           <span className="font-display font-black leading-[0.85] tracking-tighter text-accent/10 text-[10vw] md:text-[7vw] lg:text-[6rem] whitespace-nowrap mt-2">
@@ -38,28 +38,29 @@ export function Hero() {
             </div>
           </motion.div>
 
-          <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.4, duration: 0.6 }}
-            className="mt-10 flex flex-wrap gap-3 justify-center"
-          >
+        </div>
+
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+          className="relative z-10 mt-10 flex flex-col md:flex-row gap-3 justify-center"
+        >
             <a
               href="#"
-              className="group inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-full font-medium shadow-soft hover:-translate-y-0.5 transition-all"
+              className="group inline-flex items-center gap-4 bg-primary text-primary-foreground px-6 py-3 rounded-full font-medium shadow-soft hover:-translate-y-0.5 transition-all"
             >
               <Download className="h-4 w-4" />
               Resume
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 glass px-6 py-3 rounded-full font-medium hover:bg-accent/10 hover:-translate-y-0.5 transition-all"
+              className="inline-flex items-center gap-4 glass px-6 py-3 rounded-full font-medium hover:bg-accent/10 hover:-translate-y-0.5 transition-all"
             >
               <Mail className="h-4 w-4" />
               Contact Me
             </a>
-          </motion.div>
-        </div>
+        </motion.div>
 
         {/* Standalone quote bottom-right */}
         <motion.p
