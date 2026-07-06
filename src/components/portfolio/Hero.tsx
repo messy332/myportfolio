@@ -14,7 +14,7 @@ export function Hero() {
           className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center select-none"
         >
           <span className="font-display font-black leading-[0.85] tracking-tighter text-foreground/[0.07] text-[22vw] md:text-[16vw] lg:text-[14rem] whitespace-nowrap">
-            YOUR NAME
+            PARMINDER
           </span>
           <span className="font-display font-black leading-[0.85] tracking-tighter text-accent/10 text-[10vw] md:text-[7vw] lg:text-[6rem] whitespace-nowrap mt-2">
             FRONTEND DEVELOPER

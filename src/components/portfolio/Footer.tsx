@@ -34,7 +34,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-border py-5 text-center text-xs text-foreground/60">
-        © 2026 Your Name. All Rights Reserved.
+        © 2026 Parminder. All Rights Reserved.
       </div>
     </footer>
   );

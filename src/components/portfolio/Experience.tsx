@@ -10,8 +10,7 @@ const experiences = [
 ];
 
 const education = [
-  { degree: "Master of Science in Human-Computer Interaction", school: "Tech University", year: "2020" },
-  { degree: "Bachelor of Science in Computer Science", school: "State University", year: "2018" },
+  { degree: "Bachelor of Science in Information Technology", school: "Caraga State University Cabadbaran Campus", year: "S.Y 2023 - Up to Present" },
 ];
 
 export function Experience() {
@@ -68,7 +67,7 @@ export function Experience() {
           <h2 className="text-4xl md:text-6xl font-black">Education</h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-5">
+        <div className="grid md:grid-cols-1 gap-5">
           {education.map((ed, i) => (
             <motion.article
               key={i}
