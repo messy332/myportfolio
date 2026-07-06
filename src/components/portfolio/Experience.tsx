@@ -25,9 +25,6 @@ export function Experience() {
           transition={{ duration: 0.6 }}
           className="text-center mb-14"
         >
-          <span className="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 text-xs font-medium mb-4">
-            <Briefcase className="h-3.5 w-3.5 text-accent" /> Career
-          </span>
           <h2 className="text-4xl md:text-6xl font-black">Experience</h2>
         </motion.div>
       </div>
@@ -61,9 +58,6 @@ export function Experience() {
           transition={{ duration: 0.6 }}
           className="text-center mb-10"
         >
-          <span className="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 text-xs font-medium mb-4">
-            <GraduationCap className="h-3.5 w-3.5 text-accent" /> Academic
-          </span>
           <h2 className="text-4xl md:text-6xl font-black">Education</h2>
         </motion.div>
 

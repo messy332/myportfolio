@@ -8,43 +8,27 @@ export function Hero() {
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-28 pb-16 px-4"
     >
       <div className="relative w-full max-w-6xl mx-auto">
-        {/* Oversized background typography */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center select-none"
-        >
-          <span className="font-display font-black leading-[0.85] tracking-tighter text-foreground/1500 text-[22vw] md:text-[16vw] lg:text-[14rem] whitespace-nowrap">
-            PARMINDER
-          </span>
-          <span className="font-display font-black leading-[0.85] tracking-tighter text-accent/10 text-[10vw] md:text-[7vw] lg:text-[6rem] whitespace-nowrap mt-2">
-            FRONTEND DEVELOPER
-          </span>
-        </div>
-
-        {/* Center profile image */}
-        <div className="relative z-10 flex flex-col items-center text-center py-24">
+        {/* Center hero image cutout */}
+        <div className="relative z-10 flex flex-col items-center text-center py-12">
           <motion.div
-            initial={{ scale: 0.85, opacity: 0 }}
+            initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="relative"
+            className="w-full max-w-4xl"
           >
-            <div className="h-56 w-56 md:h-72 md:w-72 rounded-full bg-primary p-1.5 shadow-brand">
-              <div className="h-full w-full rounded-full bg-card flex items-center justify-center overflow-hidden border border-border">
-                <span className="font-display font-black text-4xl md:text-5xl text-primary text-center leading-none px-4">
-                  YOUR<br />NAME
-                </span>
-              </div>
-            </div>
+            <img
+              src="/image/hero-sitting.png"
+              alt="Parminder - Frontend Developer"
+              className="w-full h-auto object-contain"
+            />
           </motion.div>
-
         </div>
 
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.6 }}
-          className="relative z-10 mt-10 flex flex-col md:flex-row gap-3 justify-center"
+          className="relative z-10 mt-10 flex w-full flex-col items-start gap-3 md:flex-row md:justify-start"
         >
             <a
               href="#"
@@ -69,7 +53,7 @@ export function Hero() {
           transition={{ delay: 0.8, duration: 0.7 }}
           className="relative z-10 mt-8 md:mt-0 md:absolute md:right-2 md:bottom-0 max-w-xs text-right text-sm md:text-base italic text-foreground/60 font-display"
         >
-          "Design is intelligence made visible —<br />I build interfaces that feel effortless."
+          "Hi! I`m a Frontend Developer.Design is intelligence made visible."
         </motion.p>
       </div>
     </section>

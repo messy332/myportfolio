@@ -19,9 +19,7 @@ export function Projects() {
           transition={{ duration: 0.6 }}
           className="text-center mb-14"
         >
-          <span className="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 text-xs font-medium mb-4">
-            <FolderKanban className="h-3.5 w-3.5 text-accent" /> Selected Work
-          </span>
+          
           <h2 className="text-4xl md:text-6xl font-black">Projects</h2>
         </motion.div>
 
