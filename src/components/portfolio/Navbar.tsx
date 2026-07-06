@@ -26,7 +26,7 @@ export function Navbar() {
     >
       <nav className="glass rounded-full px-4 md:px-6 py-2.5 flex items-center justify-between shadow-brand">
         <a href="#about" className="font-display font-bold text-lg tracking-tight px-2">
-          <span className="text-gradient">Portfolio</span>
+          <span className="text-gradient">Parmind.dev</span>
         </a>
 
         <ul className="hidden md:flex items-center gap-1">

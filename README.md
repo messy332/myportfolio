@@ -18,4 +18,5 @@ is `src/routes/__root.tsx`.
 | `_layout.tsx` | layout route (renders children via `<Outlet />`) |
 | `__root.tsx` | app shell — wraps every page; preserve `<Outlet />` |
 
+## NOTE:
 `routeTree.gen.ts` is auto-generated. Don't edit it by hand.

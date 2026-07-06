@@ -13,9 +13,9 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "Your Name — Frontend Developer Portfolio" },
-      { name: "description", content: "Portfolio of Your Name — Frontend developer crafting fast, accessible, and delightful web experiences with React, TypeScript, and modern design systems." },
-      { property: "og:title", content: "Your Name — Frontend Developer" },
+      { title: "parmind.dev" },
+      { name: "description", content: "Portfolio of Your Parmminder — Frontend developer crafting fast, accessible, and delightful web experiences with React, TypeScript, and modern design systems." },
+      { property: "og:title", content: "Parminder — Frontend Developer" },
       { property: "og:description", content: "Frontend developer portfolio showcasing selected work, experience, and skills." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
