@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { Briefcase, GraduationCap } from "lucide-react";
+import { ParticleBackground } from "./ParticleBackground";
 
 const experiences = [
   { company: "Acme Corp", role: "Senior Frontend Engineer", years: "2023 — Present", desc: "Leading design-system work and shipping high-performance React apps." },
@@ -17,7 +18,8 @@ export function Experience() {
   const loop = [...experiences, ...experiences];
   return (
     <section id="experience" className="py-24 px-4 relative overflow-hidden">
-      <div className="max-w-6xl mx-auto">
+      <ParticleBackground count={40} speed={0.3} />
+      <div className="relative z-10 max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -50,7 +52,7 @@ export function Experience() {
       </div>
 
       {/* Education */}
-      <div id="education" className="max-w-6xl mx-auto mt-24">
+      <div id="education" className="relative z-10 max-w-6xl mx-auto mt-24">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
