@@ -51,9 +51,9 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.7 }}
-          className="relative z-10 mt-8 md:mt-0 md:absolute md:right-2 md:bottom-0 max-w-xs text-right text-sm md:text-base italic text-foreground/60 font-display"
+          className="relative z-10 mt-8 md:mt-0 md:absolute md:right-2 md:bottom-0 max-w-xs text-justify text-sm md:text-base italic text-foreground/60 font-display"
         >
-          "Hi! I`m a Frontend Developer.Design is intelligence made visible."
+          "Hi! I'm a Frontend Developer passionate about creating accessible and inclusive websites where everyone can connect, interact, and belong. Design is intelligence made visible."
         </motion.p>
       </div>
     </section>
