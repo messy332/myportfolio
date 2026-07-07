@@ -21,7 +21,7 @@ export function Hero() {
             <img
               src="/image/hero-sitting.png"
               alt="Parminder - Frontend Developer"
-              className="w-full h-auto object-contain"
+              className="w-full h-auto object-contain mix-blend-multiply dark:mix-blend-screen"
             />
           </motion.div>
         </div>
