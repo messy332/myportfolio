@@ -5,11 +5,11 @@ export function Hero() {
   return (
     <section
       id="about"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-28 pb-16 px-4"
+      className="relative min-h-screen flex items-start justify-center overflow-hidden pt-16 pb-16 px-4"
     >
       <div className="relative w-full max-w-6xl mx-auto">
         {/* Center hero image cutout */}
-        <div className="relative z-10 flex flex-col items-center text-center py-12">
+        <div className="relative z-10 flex flex-col items-center text-center pt-35 pb-4">
           <motion.div
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -28,7 +28,7 @@ export function Hero() {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.6 }}
-          className="relative z-10 mt-10 flex w-full flex-col items-start gap-3 md:flex-row md:justify-start"
+          className="relative z-10 mt-20 flex w-full flex-col items-start gap-3 md:flex-row md:justify-start"
         >
             <a
               href="#"
@@ -51,9 +51,9 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.7 }}
-          className="relative z-10 mt-8 md:mt-0 md:absolute md:right-2 md:bottom-0 max-w-xs text-justify text-sm md:text-base italic text-foreground/60 font-display"
+          className="relative z-10 mt-8 md:mt-0 md:absolute md:right-2 md:bottom-0 max-w-xs text-justify text-sm md:text-base text-foreground font-display"
         >
-          "Hi! I'm a Frontend Developer passionate about creating accessible and inclusive websites where everyone can connect, interact, and belong. Design is intelligence made visible."
+          Hi! I'm a Frontend Developer passionate about creating accessible and inclusive websites where everyone can connect, interact, and belong. Design is intelligence made visible.
         </motion.p>
       </div>
     </section>

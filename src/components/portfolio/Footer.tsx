@@ -5,7 +5,7 @@ export function Footer() {
     <footer className="mt-16 border-t border-border">
       <div className="max-w-6xl mx-auto px-4 py-14 grid md:grid-cols-3 gap-10">
         <div>
-          <h3 className="font-display font-black text-2xl mb-3 text-gradient">Your Name</h3>
+          <h3 className="font-display font-black text-2xl mb-3 text-gradient">PARMIDER</h3>
           <p className="text-sm text-foreground/70 max-w-xs">
             Frontend developer crafting fast, accessible, and delightful interfaces for ambitious teams.
           </p>
