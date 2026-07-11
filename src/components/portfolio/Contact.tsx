@@ -117,7 +117,7 @@ export function Contact() {
               message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
             };
             try {
-              const API = import.meta.env.VITE_API_URL ?? "http://localhost:3001";
+              const API = import.meta.env.VITE_API_URL ?? "";
               const res = await fetch(`${API}/api/contact`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
