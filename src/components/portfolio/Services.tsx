@@ -58,7 +58,7 @@ export function Services() {
                 whileHover={{ scale: 1.2, rotate: 5 }}
                 transition={{ duration: 0.25, ease: "easeOut" }}
               >
-                <s.icon className="h-7 w-7 text-black dark:text-white" />
+                <s.icon className="h-7 w-7 text-brand-blue" />
               </motion.div>
               <h3 className="text-lg font-bold mb-2">{s.title}</h3>
               <p className="text-sm text-foreground/60 leading-relaxed">{s.desc}</p>

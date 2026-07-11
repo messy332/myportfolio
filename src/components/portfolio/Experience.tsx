@@ -1,18 +1,20 @@
 import { motion } from "motion/react";
-import { Briefcase, GraduationCap } from "lucide-react";
+import { GraduationCap, ExternalLink, Award } from "lucide-react";
 import { ParticleBackground } from "./ParticleBackground";
 
 const experiences = [
-  { company: "Acme Corp", role: "Senior Frontend Engineer", years: "2023 — Present", desc: "Leading design-system work and shipping high-performance React apps." },
-  { company: "Nova Labs", role: "Frontend Developer", years: "2021 — 2023", desc: "Built dashboards and marketing sites with Next.js and Tailwind." },
-  { company: "Pixel Studio", role: "UI Engineer", years: "2019 — 2021", desc: "Crafted interactive product experiences and micro-animations." },
-  { company: "Freelance", role: "Web Developer", years: "2017 — 2019", desc: "Delivered custom websites for startups and small businesses." },
-  { company: "Bright Agency", role: "Junior Developer", years: "2016 — 2017", desc: "Learned the craft building landing pages and email templates." },
+  { company: "Apply AI", role: "Certification", years: "2026", desc: "Practical training in applying AI to real-world problems, including prompt engineering and workflow automation directly relevant to evaluating and refining AI-generated code.", pdf: "/image/Apply_AI-_Update_Your_Resume_certificate_parmindercristoria-AI-Data Science.pdf", icon: "cert" },
+  { company: "AI Ignite for MSMEs", role: "Certification", years: "2026", desc: "Training on applying AI to improve business operations and data-driven decision-making.", pdf: "/image/Certificate of Completion.pdf", icon: "cert" },
+  { company: "Data Analytics", role: "Certification", years: "2026", desc: "Data collection, cleaning, visualization, and interpretation techniques.", pdf: "/image/Parminder Cristoria.pdf", icon: "cert" },
+  { company: "Java Essentials", role: "Certification · 40 Hours", years: "2025", desc: "Core Java and object-oriented programming fundamentals, strengthening general programming-language proficiency.", pdf: "/image/JAVA PROGRAMMING ESSENTIALS - CSU - CBR (1)-19(isigned)_signed.pdf", icon: "cert" },
+  { company: "PSC 10", role: "Top 15 Finalist", years: "2025", desc: "Built and pitched a technology-based startup solution as part of a team at the Philippine Startup Challenge 10.", pdf: "/image/Cristoria_Top15RPC_2025-37.pdf", icon: "award" },
 ];
 
 const education = [
   { degree: "Bachelor of Science in Information Technology", school: "Caraga State University Cabadbaran Campus", year: "S.Y 2023 - Up to Present" },
 ];
+
+
 
 export function Experience() {
   const loop = [...experiences, ...experiences];
@@ -38,13 +40,27 @@ export function Experience() {
           <div className="flex gap-6 w-max animate-marquee pause-on-hover">
             {loop.map((e, i) => (
               <article key={i} className="w-80 shrink-0 glass rounded-2xl p-5 shadow-brand hover:-translate-y-1 hover:shadow-glow transition-all">
-                <div className="h-36 rounded-xl gradient-brand mb-4 flex items-center justify-center">
-                  <span className="font-display font-black text-3xl text-white">{e.company.charAt(0)}</span>
+                <div className="mb-4">
+                  {e.icon === "award"
+                    ? <Award className="h-10 w-10 text-brand-blue" />
+                    : <GraduationCap className="h-10 w-10 text-brand-blue" />
+                  }
                 </div>
                 <h3 className="font-bold text-lg">{e.company}</h3>
                 <p className="text-sm text-accent font-medium">{e.role}</p>
                 <p className="text-xs text-muted-foreground mb-2">{e.years}</p>
                 <p className="text-sm text-foreground/70">{e.desc}</p>
+                {e.pdf && (
+                  <a
+                    href={e.pdf}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 mt-3 text-xs font-semibold text-brand-blue hover:underline"
+                  >
+                    <ExternalLink className="h-3.5 w-3.5" />
+                    View Certificate
+                  </a>
+                )}
               </article>
             ))}
           </div>
@@ -87,6 +103,8 @@ export function Experience() {
           ))}
         </div>
       </div>
+
+
     </section>
   );
 }

@@ -2,9 +2,9 @@ import { motion } from "motion/react";
 import { ParticleBackground } from "./ParticleBackground";
 
 const skills = [
-  "HTML", "CSS", "JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS", "Bootstrap",
-  "Node.js", "Express.js", "PHP", "Laravel", "MySQL", "PostgreSQL", "MongoDB", "Git",
-  "GitHub", "Figma", "Docker", "REST API", "Firebase", "Supabase", "Shadcn/UI", "Radix UI", "Vite",
+  "HTML5", "CSS3", "JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS", "Bootstrap",
+  "Node.js", "Express.js", "PHP", "Laravel", "MySQL", "SQL", "PostgreSQL", "MongoDB", "Git",
+  "GitHub", "Figma", "UI Design", "UX Design", "Docker", "REST API", "Firebase", "Supabase", "Shadcn/UI", "Radix UI", "Vite",
 ];
 
 export function Skills() {
