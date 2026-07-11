@@ -1,15 +1,18 @@
+import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { createClient } from "@supabase/supabase-js";
 import nodemailer from "nodemailer";
 
-export default async function handler(
-  req: { method: string; body: { name?: string; email?: string; subject?: string; message?: string } },
-  res: { status: (code: number) => { json: (data: unknown) => void }; json: (data: unknown) => void }
-) {
+export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed." });
   }
 
-  const { name, email, subject, message } = req.body;
+  const { name, email, subject, message } = req.body as {
+    name?: string;
+    email?: string;
+    subject?: string;
+    message?: string;
+  };
 
   if (!name || !email || !subject || !message) {
     return res.status(400).json({ error: "All fields are required." });
@@ -55,6 +58,7 @@ export default async function handler(
     });
   } catch (err) {
     console.error("Email error:", err);
+    // Message was saved, just email failed
     return res.status(207).json({ warning: "Saved but email failed to send." });
   }
 

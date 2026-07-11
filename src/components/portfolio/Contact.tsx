@@ -117,15 +117,13 @@ export function Contact() {
               message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
             };
             try {
-              const { createClient } = await import("@supabase/supabase-js");
-              const supabase = createClient(
-                import.meta.env.VITE_SUPABASE_URL,
-                import.meta.env.VITE_SUPABASE_ANON_KEY
-              );
-              const { error: dbError } = await supabase
-                .from("messages")
-                .insert([data]);
-              if (dbError) throw new Error(dbError.message || "Failed to save message.");
+              const res = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data),
+              });
+              const json = await res.json() as { error?: string; warning?: string };
+              if (!res.ok) throw new Error((json as any).error || "Failed to send message.");
               form.reset();
               setSent(true);
               if (timerRef.current) clearTimeout(timerRef.current);
