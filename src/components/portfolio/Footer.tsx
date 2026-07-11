@@ -7,7 +7,7 @@ export function Footer() {
         <div>
           <h3 className="font-display font-black text-2xl mb-3 text-gradient">PARMIDER</h3>
           <p className="text-sm text-foreground/70 max-w-xs">
-            Frontend developer crafting fast, accessible, and delightful interfaces for ambitious teams.
+            Web Graphic Designer crafting fast, accessible, and delightful interfaces for ambitious teams.
           </p>
         </div>
         <div>
