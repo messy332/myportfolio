@@ -13,7 +13,22 @@ const RESPONSES: { match: RegExp; reply: string }[] = [
   { match: /hi|hello|hey|yo/i, reply: "Hey there! 👋 I'm the portfolio assistant. Ask me about projects, skills, availability, or how to get in touch." },
 ];
 
-const DEFAULT_REPLY = "Great question! Try asking about my projects, skills, availability, or how to get in touch.";
+const DEFAULT_REPLY = "Sorry, I didn't understand that. I can only answer questions about this portfolio — try asking about projects, skills, availability, or how to get in touch.";
+
+/** Returns true if the message looks like gibberish or is clearly off-topic */
+function isGibberish(text: string): boolean {
+  const trimmed = text.trim();
+  // Too short to be meaningful
+  if (trimmed.length < 2) return true;
+  // Repeating characters like "aaaaaa" or "jkjkjk"
+  if (/^(.)\1{3,}$/.test(trimmed)) return true;
+  // No vowels and longer than 4 chars (likely random key mashing)
+  if (trimmed.length > 4 && !/[aeiou]/i.test(trimmed)) return true;
+  // Mostly non-alphabetic characters
+  const alphaRatio = (trimmed.match(/[a-z]/gi) ?? []).length / trimmed.length;
+  if (trimmed.length > 5 && alphaRatio < 0.5) return true;
+  return false;
+}
 
 export function FloatingChat() {
   const [open, setOpen] = useState(false);
@@ -35,7 +50,12 @@ export function FloatingChat() {
     setMessages((m) => [...m, { role: "user", text }]);
     setInput("");
     setTyping(true);
-    const reply = RESPONSES.find((r) => r.match.test(text))?.reply ?? DEFAULT_REPLY;
+    const matched = RESPONSES.find((r) => r.match.test(text))?.reply;
+    const reply = matched
+      ? matched
+      : isGibberish(text)
+      ? "⚠️ That doesn't look like a valid question. I only handle portfolio-related topics — ask about projects, skills, availability, or contact info."
+      : DEFAULT_REPLY;
     const delay = 700 + Math.min(1500, reply.length * 15);
     setTimeout(() => {
       setMessages((m) => [...m, { role: "bot", text: reply }]);
