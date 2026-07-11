@@ -25,6 +25,8 @@ const itemVariants: Variants = {
 
 export function Contact() {
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
@@ -103,11 +105,37 @@ export function Contact() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          onSubmit={(e) => {
+          onSubmit={async (e) => {
             e.preventDefault();
-            setSent(true);
-            if (timerRef.current) clearTimeout(timerRef.current);
-            timerRef.current = setTimeout(() => setSent(false), 3000);
+            setError(null);
+            setLoading(true);
+            const form = e.currentTarget;
+            const data = {
+              name: (form.elements.namedItem("name") as HTMLInputElement).value,
+              email: (form.elements.namedItem("email") as HTMLInputElement).value,
+              subject: (form.elements.namedItem("subject") as HTMLInputElement).value,
+              message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
+            };
+            try {
+              const API = import.meta.env.VITE_API_URL ?? "http://localhost:3001";
+              const res = await fetch(`${API}/api/contact`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data),
+              });
+              if (!res.ok) {
+                const json = await res.json();
+                throw new Error(json.error || "Something went wrong.");
+              }
+              form.reset();
+              setSent(true);
+              if (timerRef.current) clearTimeout(timerRef.current);
+              timerRef.current = setTimeout(() => setSent(false), 3000);
+            } catch (err: any) {
+              setError(err.message);
+            } finally {
+              setLoading(false);
+            }
           }}
           className="glass rounded-3xl p-6 md:p-8 shadow-brand space-y-4"
         >
@@ -124,14 +152,18 @@ export function Contact() {
               className="w-full rounded-2xl bg-card/70 border border-border px-4 py-3 outline-none focus:ring-2 focus:ring-accent transition duration-300"
             />
           </div>
+          {error && (
+            <p className="text-sm text-red-500">{error}</p>
+          )}
           <motion.button
             type="submit"
+            disabled={loading}
             whileHover={{ y: -2, scale: 1.01 }}
             whileTap={{ scale: 0.98 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="w-full inline-flex items-center justify-center gap-2 gradient-brand text-primary-foreground px-6 py-4 rounded-2xl font-semibold shadow-brand hover:shadow-glow transition-shadow duration-300"
+            className="w-full inline-flex items-center justify-center gap-2 gradient-brand text-primary-foreground px-6 py-4 rounded-2xl font-semibold shadow-brand hover:shadow-glow transition-shadow duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
           >
-            {sent ? "Message Sent! ✓" : "Send Message"}
+            {loading ? "Sending…" : sent ? "Message Sent! ✓" : "Send Message"}
           </motion.button>
         </motion.form>
       </div>
