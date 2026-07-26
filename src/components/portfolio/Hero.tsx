@@ -43,7 +43,6 @@ export function Hero() {
 
           {/* Big headline */}
           <h1 className="text-4xl sm:text-5xl xl:text-7xl font-display font-bold leading-tight text-foreground">
-            {/* Web{" "} */}
             <span className="text-brand-blue">Software</span>
             <br />
            Developer
