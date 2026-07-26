@@ -11,7 +11,7 @@ const experiences = [
 ];
 
 const education = [
-  { degree: "Bachelor of Science in Information Technology", school: "Caraga State University Cabadbaran Campus", year: "S.Y 2023 - 2027t" },
+  { degree: "Bachelor of Science in Information Technology", school: "Caraga State University Cabadbaran Campus", year: "S.Y 2023 - 2027" },
 ];
 
 
