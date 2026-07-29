@@ -113,26 +113,29 @@ export function Projects() {
                     </span>
                   ))}
                 </div>
-                <a
-                  href={p.live}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 inline-flex items-center justify-center gap-2 rounded-lg bg-accent text-white px-4 py-2 text-sm font-medium hover:opacity-90 transition"
-                >
-                  <ExternalLink className="w-4 h-4" />
-                  Live Demo
-                </a>
+                <div className="mt-auto flex items-center gap-3">
+                  {p.live && (
+                    <a
+                      href={p.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white hover:opacity-90 transition"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                      Live Demo
+                    </a>
+                  )}
 
-                {/* GitHub */}
-                <a
-                  href={p.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 inline-flex items-center justify-center gap-2 rounded-lg border border-white/20 px-4 py-2 text-sm font-medium hover:bg-white/10 transition"
-                >
-                  <Github className="w-4 h-4" />
-                  GitHub
-                </a>
+                  <a
+                    href={p.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 inline-flex items-center justify-center gap-2 rounded-lg border border-white/20 px-4 py-2 text-sm font-medium hover:bg-white/10 transition"
+                  >
+                    <Github className="w-4 h-4" />
+                    GitHub
+                  </a>
+                </div>
               </div>
             </motion.article>
           ))}
