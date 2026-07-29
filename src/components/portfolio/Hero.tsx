@@ -11,7 +11,6 @@ export function Hero() {
       <ParticleBackground count={55} />
 
       <div className="relative z-10 w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-
         {/* On mobile: image first, text below */}
         {/* Right — image */}
         <motion.div
@@ -43,16 +42,17 @@ export function Hero() {
 
           {/* Big headline */}
           <h1 className="text-4xl sm:text-5xl xl:text-7xl font-display font-bold leading-tight text-foreground">
+            <span>Junior</span>
             <span className="text-brand-blue">Software</span>
             <br />
-           Developer
+            Developer
           </h1>
 
           {/* Bio */}
           <p className="max-w-md text-sm sm:text-base text-muted-foreground leading-relaxed">
-            Passionate about creating accessible and inclusive websites where
-            everyone can connect, interact, and belong. Design is intelligence
-            made visible.
+            Passionate about building accessible, user-friendly, and reliable web applications that
+            create meaningful experiences for everyone. Always learning, improving, and writing
+            clean, maintainable code.
           </p>
 
           {/* CTA buttons */}
@@ -78,7 +78,6 @@ export function Hero() {
             </a>
           </motion.div>
         </motion.div>
-
       </div>
     </section>
   );

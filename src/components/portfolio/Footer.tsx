@@ -7,7 +7,8 @@ export function Footer() {
         <div>
           <h3 className="font-display font-black text-2xl mb-3 text-gradient">PARMIDER</h3>
           <p className="text-sm text-foreground/70 max-w-xs">
-            Software Developer crafting fast, accessible, and delightful interfaces for ambitious teams.
+            Junior Software Developer crafting fast, accessible, and user-friendly applications
+            while continuously learning and growing.{" "}
           </p>
         </div>
         <div>
@@ -26,11 +27,26 @@ export function Footer() {
           </ul>
           <div className="flex gap-2">
             {[
-              { Icon: Github,    href: "https://github.com/messy332",                               label: "GitHub" },
-              { Icon: Linkedin,  href: "https://www.linkedin.com/in/parminder-cristoria-1a3b38393/", label: "LinkedIn" },
-              { Icon: Instagram, href: "https://www.instagram.com/dayswithpar",                     label: "Instagram" },
+              { Icon: Github, href: "https://github.com/messy332", label: "GitHub" },
+              {
+                Icon: Linkedin,
+                href: "https://www.linkedin.com/in/parminder-cristoria-1a3b38393/",
+                label: "LinkedIn",
+              },
+              {
+                Icon: Instagram,
+                href: "https://www.instagram.com/dayswithpar",
+                label: "Instagram",
+              },
             ].map(({ Icon, href, label }) => (
-              <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className="h-9 w-9 rounded-full glass grid place-items-center hover:gradient-brand hover:text-white transition-all">
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="h-9 w-9 rounded-full glass grid place-items-center hover:gradient-brand hover:text-white transition-all"
+              >
                 <Icon className="h-3.5 w-3.5" />
               </a>
             ))}
