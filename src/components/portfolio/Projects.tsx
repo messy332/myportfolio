@@ -35,7 +35,7 @@ const projects = [
     title: "Intern Management System",
     desc: "Attendance module that generates a Daily Time Record (DTR) automatically from scanner input.",
     image: "/projects/intern.png",
-    github: "https://github.com/yourusername/gym-management",
+    github: "https://github.com/yourusername/intern-management",
     tech: ["PHP", "Laravel", "Supabase", "JavaScript", "Tailwind CSS"],
   },
   {
@@ -70,6 +70,7 @@ const cardVariants: Variants = {
     },
   },
 };
+
 export function Projects() {
   return (
     <section id="projects" className="py-24 px-4 relative overflow-hidden">
@@ -87,7 +88,52 @@ export function Projects() {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 overflow-y-auto max-h-[420px] sm:max-h-[500px] pr-1 scrollbar-thin scrollbar-thumb-accent/30 scrollbar-track-transparent">
           {projects.map((p, i) => (
-            <motion.article variants={cardVariants} initial="hidden" whileInView="visible" />
+            <motion.article
+              key={p.title}
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.05 }}
+              className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm overflow-hidden flex flex-col hover:-translate-y-1 hover:shadow-lg transition-transform"
+            >
+              <div className="aspect-video w-full bg-black/10 overflow-hidden">
+                <img
+                  src={p.image}
+                  alt={p.title}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+
+              <div className="p-5 flex flex-col flex-1">
+                <h3 className="text-lg font-bold mb-2">{p.title}</h3>
+                <p className="text-sm text-muted-foreground mb-4 flex-1">
+                  {p.desc}
+                </p>
+
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {p.tech.map((t) => (
+                    <span
+                      key={t}
+                      className="text-xs px-2 py-1 rounded-full bg-accent/10 text-accent"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+
+                <a
+                  href={p.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm font-medium hover:text-accent transition-colors"
+                >
+                  <Github className="w-4 h-4" />
+                  View on GitHub
+                </a>
+              </div>
+            </motion.article>
           ))}
         </div>
       </div>
