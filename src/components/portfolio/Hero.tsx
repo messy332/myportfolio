@@ -49,7 +49,7 @@ export function Hero() {
           </h1>
 
           {/* Bio */}
-          <p className="max-w-md text-sm sm:text-base text-muted-foreground leading-relaxed">
+          <p className="inline-flex max-w-md text-sm sm:text-base text-muted-foreground leading-relaxed ">
             Passionate about building accessible, user-friendly, and reliable web applications that
             create meaningful experiences for everyone. Always learning, improving, and writing
             clean, maintainable code.
