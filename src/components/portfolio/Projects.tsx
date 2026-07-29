@@ -54,22 +54,22 @@ const projects = [
   },
 ];
 
-const cardVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 40,
-    scale: 0.95,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: {
-      duration: 0.6,
-      ease: [0.22, 1, 0.36, 1],
-    },
-  },
-};
+// const cardVariants: Variants = {
+//   hidden: {
+//     opacity: 0,
+//     y: 40,
+//     scale: 0.95,
+//   },
+//   visible: {
+//     opacity: 1,
+//     y: 0,
+//     scale: 1,
+//     transition: {
+//       duration: 0.6,
+//       ease: [0.22, 1, 0.36, 1],
+//     },
+//   },
+// };
 
 export function Projects() {
   return (
@@ -90,11 +90,14 @@ export function Projects() {
           {projects.map((p, i) => (
             <motion.article
               key={p.title}
-              variants={cardVariants}
-              initial="hidden"
-              whileInView="visible"
+              initial={{ opacity: 0, y: 40, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.05 }}
+              transition={{
+                duration: 0.6,
+                delay: i * 0.05,
+                ease: [0.22, 1, 0.36, 1],
+              }}
               className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm overflow-hidden flex flex-col hover:-translate-y-1 hover:shadow-lg transition-transform"
             >
               <div className="aspect-video w-full bg-black/10 overflow-hidden">
@@ -108,9 +111,7 @@ export function Projects() {
 
               <div className="p-5 flex flex-col flex-1">
                 <h3 className="text-lg font-bold mb-2">{p.title}</h3>
-                <p className="text-sm text-muted-foreground mb-4 flex-1">
-                  {p.desc}
-                </p>
+                <p className="text-sm text-muted-foreground mb-4 flex-1">{p.desc}</p>
 
                 <div className="flex flex-wrap gap-2 mb-4">
                   {p.tech.map((t) => (
