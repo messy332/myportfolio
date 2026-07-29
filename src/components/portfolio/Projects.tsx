@@ -122,14 +122,16 @@ export function Projects() {
                   <ExternalLink className="w-4 h-4" />
                   Live Demo
                 </a>
+
+                {/* GitHub */}
                 <a
                   href={p.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm font-medium hover:text-accent transition-colors"
+                  className="flex-1 inline-flex items-center justify-center gap-2 rounded-lg border border-white/20 px-4 py-2 text-sm font-medium hover:bg-white/10 transition"
                 >
                   <Github className="w-4 h-4" />
-                  View on GitHub
+                  GitHub
                 </a>
               </div>
             </motion.article>
