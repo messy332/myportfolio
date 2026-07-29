@@ -1,6 +1,6 @@
 import { motion, type Variants } from "motion/react";
 import { ParticleBackground } from "./ParticleBackground";
-import { Github } from "lucide-react";
+import { Github, ExternalLink } from "lucide-react";
 
 const projects = [
   {
@@ -8,6 +8,7 @@ const projects = [
     desc: "Enables patients to book appointments with doctors online, reducing manual scheduling.",
     image: "/projects/hospital.png",
     github: "https://github.com/yourusername/hospital-management",
+    live: "https://hospital.yourdomain.com",
     tech: ["PHP", "MySQL", "JavaScript", "CSS", "HTML"],
   },
   {
@@ -15,6 +16,7 @@ const projects = [
     desc: "Basic e-learning platform delivering a structured cybersecurity fundamentals learning guide.",
     image: "/projects/elearning.png",
     github: "https://github.com/yourusername/elearning-cybersecurity",
+    live: "https://hospital.yourdomain.com",
     tech: ["PHP", "MySQL", "JavaScript", "CSS", "HTML"],
   },
   {
@@ -22,6 +24,7 @@ const projects = [
     desc: "Standard payroll processing system to calculate and manage employee pay records.",
     image: "/projects/payroll.png",
     github: "https://github.com/yourusername/payroll-system",
+    live: "https://hospital.yourdomain.com",
     tech: ["Java"],
   },
   {
@@ -29,6 +32,7 @@ const projects = [
     desc: "Booking system allowing members to schedule sessions with gym trainers.",
     image: "/projects/gym.png",
     github: "https://github.com/yourusername/gym-management",
+    live: "https://hospital.yourdomain.com",
     tech: ["PHP", "MySQL", "JavaScript", "CSS", "HTML"],
   },
   {
@@ -36,6 +40,7 @@ const projects = [
     desc: "Attendance module that generates a Daily Time Record (DTR) automatically from scanner input.",
     image: "/projects/intern.png",
     github: "https://github.com/yourusername/intern-management",
+    live: "https://hospital.yourdomain.com",
     tech: ["PHP", "Laravel", "Supabase", "JavaScript", "Tailwind CSS"],
   },
   {
@@ -43,6 +48,7 @@ const projects = [
     desc: "Image-scanning tool to identify coffee cup variety from uploaded images.",
     image: "/projects/coffee.png",
     github: "https://github.com/yourusername/coffee-cup-scanner",
+    live: "https://hospital.yourdomain.com",
     tech: ["Dart", "Flutter", "Firebase"],
   },
   {
@@ -50,26 +56,10 @@ const projects = [
     desc: "Records farmer information and tracks harvest outcomes, including yield and crop failure data.",
     image: "/projects/farmtrack.png",
     github: "https://github.com/yourusername/farmtrack-management",
+    live: "https://hospital.yourdomain.com",
     tech: ["PHP", "Laravel", "Supabase", "JavaScript", "Tailwind CSS"],
   },
 ];
-
-// const cardVariants: Variants = {
-//   hidden: {
-//     opacity: 0,
-//     y: 40,
-//     scale: 0.95,
-//   },
-//   visible: {
-//     opacity: 1,
-//     y: 0,
-//     scale: 1,
-//     transition: {
-//       duration: 0.6,
-//       ease: [0.22, 1, 0.36, 1],
-//     },
-//   },
-// };
 
 export function Projects() {
   return (
@@ -123,7 +113,15 @@ export function Projects() {
                     </span>
                   ))}
                 </div>
-
+                <a
+                  href={p.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 inline-flex items-center justify-center gap-2 rounded-lg bg-accent text-white px-4 py-2 text-sm font-medium hover:opacity-90 transition"
+                >
+                  <ExternalLink className="w-4 h-4" />
+                  Live Demo
+                </a>
                 <a
                   href={p.github}
                   target="_blank"
